@@ -1,0 +1,13 @@
+{
+  "name": "Phandelver: XP de la mesa",
+  "version": "0.1.0",
+  "manifest_version": 1,
+  "description": "Contador de XP para «La Mina Perdida de Phandelver»: combates, hitos de historia y tope de nivel 5.",
+  "action": {
+    "title": "XP de la mesa",
+    "icon": "/icon.svg",
+    "popover": "/",
+    "height": 600,
+    "width": 380
+  }
+}

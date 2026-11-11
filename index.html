@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XP de la mesa</title>
+  </head>
+  <body>
+    <main>
+      <header class="top">
+        <h1>XP de la mesa</h1>
+        <span id="role" class="role"></span>
+      </header>
+
+      <p id="notice" class="notice" role="status" hidden></p>
+      <p id="error" class="error" role="alert" hidden></p>
+
+      <ul id="party" class="party"></ul>
+
+      <label class="gate" id="gate">
+        <input type="checkbox" id="cap" />
+        <span class="gate-icon" aria-hidden="true"></span>
+        <span class="gate-text">
+          <strong id="gate-title">Nivel 5 bloqueado</strong>
+          <small id="gate-hint">Se desbloquea al final de la aventura.</small>
+        </span>
+      </label>
+
+      <section class="gm-only block">
+        <h2>Sumar combate</h2>
+        <form id="combat" class="combat">
+          <input id="combat-label" type="text" placeholder="Qué combate (opcional)" maxlength="40" />
+          <div class="combat-row">
+            <input id="combat-xp" type="number" min="1" step="1" inputmode="numeric" placeholder="XP total de los enemigos" required />
+            <button type="submit">Sumar</button>
+          </div>
+          <fieldset id="present" class="present"><legend>Presentes</legend></fieldset>
+          <p id="combat-preview" class="hint"></p>
+        </form>
+      </section>
+
+      <section class="block">
+        <h2>Hitos de historia</h2>
+        <ol id="milestones" class="path"></ol>
+        <details class="gm-only notes">
+          <summary>Tus notas de los hitos (solo las ves tú)</summary>
+          <p class="hint">Pega una línea por hito, por ejemplo «H1 Quién se llevó al enano». Se guardan solo en este navegador: los jugadores no las ven.</p>
+          <textarea id="notes" rows="8" spellcheck="false"></textarea>
+          <button id="notes-save" type="button">Guardar notas</button>
+        </details>
+      </section>
+
+      <section class="block">
+        <h2>Últimas anotaciones <button id="undo" class="gm-only quiet" type="button">Deshacer la última</button></h2>
+        <ol id="log" class="log"></ol>
+        <button id="reset" class="gm-only quiet danger" type="button">Empezar de cero</button>
+      </section>
+    </main>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
